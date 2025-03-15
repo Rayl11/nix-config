@@ -26,6 +26,8 @@
       url = "github:lnl7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs-darwin";
     };
+      # github project to solve nix apps in launcher problem
+      mac-app-util.url = "github:hraban/mac-app-util";
   };
 
   # The `outputs` function will return all the build results of the flake.
@@ -37,6 +39,7 @@
     self,
     nixpkgs,
     darwin,
+    mac-app-util,
     ...
   }: let
     # TODO replace with your own username, system and hostname
@@ -53,10 +56,14 @@
     darwinConfigurations."${hostname}" = darwin.lib.darwinSystem {
       inherit system specialArgs;
       modules = [
+        # Include mac-app-util module
+        # This adds installed apps with nix to launcher
+         mac-app-util.darwinModules.default
+
+        # Local Modules
         ./modules/nix-core.nix
         ./modules/system.nix
         ./modules/apps.nix
-
         ./modules/host-users.nix
       ];
     };

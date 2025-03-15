@@ -24,6 +24,8 @@
     spotify
     discord
     slack
+    aerospace
+    kitty
    ];
 
   # The apps installed by homebrew are not managed by nix, and not reproducible!
@@ -53,6 +55,7 @@
       "scroll-reverser"
       "displaylink"
       "prusaslicer"
+      "zen-browser"
     ];
   };
 }
