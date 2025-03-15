@@ -21,7 +21,10 @@
     git
     btop
     neovim
-  ];
+    spotify
+    discord
+    slack
+   ];
 
   # The apps installed by homebrew are not managed by nix, and not reproducible!
   # But on macOS, homebrew has a much larger selection of apps than nixpkgs, especially for GUI apps!
@@ -47,7 +50,9 @@
     # `brew install --cask`
     # TODO Feel free to add your favorite apps here.
     casks = [
-      # "google-chrome"
+      "scroll-reverser"
+      "displaylink"
+      "prusaslicer"
     ];
   };
 }
