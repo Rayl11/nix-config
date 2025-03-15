@@ -26,6 +26,19 @@
     slack
     aerospace
     kitty
+    syncthing
+    jankyborders
+    hugo
+    multimarkdown
+    rust-analyzer
+    ripgrep
+    flyctl
+    fd
+    fontconfig
+    freetype
+    gmp
+    shellcheck
+    coreutils
    ];
 
   # The apps installed by homebrew are not managed by nix, and not reproducible!
